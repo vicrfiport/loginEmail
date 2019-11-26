@@ -11,7 +11,8 @@ router.post("/",
         .isEmpty(),
     check("email")
         .not()
-        .isEmpty(),
+        .isEmpty()
+        .isEmail(),
     check("phone")
         .not()
         .isEmpty(),

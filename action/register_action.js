@@ -51,7 +51,7 @@ class Register {
         
 
         let password = bcrypt.hashSync(this.password, 8)
-        console.log(`Hasing password ${password} `)
+        
         
         let insert_data = {
 
@@ -60,7 +60,7 @@ class Register {
             email: this.email,
             phone: this.phone,
             gender: this.gender,
-            activation_token: this.activation_token,
+            activation_token:token,
             password
 
         }
@@ -80,7 +80,7 @@ class Register {
 
         setTimeout(async () => {
 
-            return await transporter.sendMail(data,(error, resp) => {
+            return await transporter.sendMail(data,(error, res) => {
 
                 if (error) {
                     console.log(error)
