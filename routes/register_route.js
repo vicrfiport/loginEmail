@@ -6,7 +6,7 @@ const {check, validationResult, body} = require("express-validator")
 router.post("/", 
 [
 
-    check("name")
+    check("nama")
         .not()
         .isEmpty(),
     check("email")
