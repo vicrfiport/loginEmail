@@ -10,7 +10,7 @@ let roleSchema = new Schema ({
     },
     menu: {type: String},
     permission:{
-        type: Array,
+        type: String,
         default: null
     },
     created_at:{

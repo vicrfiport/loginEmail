@@ -3,7 +3,7 @@ const Role = require("../models/role_models")
 class CreateRole{
     constructor(req){
         (this.name = req.body.name),
-        (this.permission = JSON.parse(req.body.permission))
+        (this.permission = req.body.permission)
 
     }
 
