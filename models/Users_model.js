@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const userSchema = new Schema({
 
-    nama: {
+    name: {
         type: String,
         default: null
 
@@ -52,7 +52,7 @@ const userSchema = new Schema({
         type: Date,
         default: null
     },
-    Role_id: {
+    role_id: {
             type: String,
             default: null
             

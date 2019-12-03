@@ -8,7 +8,6 @@ let roleSchema = new Schema ({
             unique: true,
             require: true
     },
-    menu: {type: String},
     permission:{
         type: String,
         default: null
