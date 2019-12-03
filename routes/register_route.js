@@ -26,10 +26,10 @@ router.post("/",
         .not()
         .isEmpty()
         .isLength({min : 8}),
-    check("password_confirmation")
+    check("password_confirm")
         .not()
         .isEmpty(),
-    body("password_confirmation").custom((value,{req}) => {
+    body("password_confirm").custom((value,{req}) => {
 
         if (value != req.body.password) {
             throw new  error("password confirmation does not match")

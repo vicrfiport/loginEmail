@@ -51,7 +51,13 @@ const userSchema = new Schema({
     deleted_at: {
         type: Date,
         default: null
-    }
+    },
+    Role_id: {
+            type: String,
+            default: null
+            
+        }
+    
 })
 
 let User = mongoose.model("User", userSchema)

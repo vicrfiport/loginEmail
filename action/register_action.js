@@ -1,4 +1,5 @@
 const user = require("../models/Users_model")
+const Role = require("../models/role_models")
 const bcrypt = require("bcryptjs")
 const nodemailer = require ("nodemailer")
 const {randomKey} = require("../lib/genaratorkey")
@@ -52,16 +53,20 @@ class Register {
 
         let password = bcrypt.hashSync(this.password, 8)
         
+        let query1  = await Role.findOne({name:"User"})
+        
         
         let insert_data = {
 
             nama:  this.nama,
+            Role_id: query1._id,
             username: this.username,
             email: this.email,
             phone: this.phone,
             gender: this.gender,
             activation_token:token,
             password
+            
 
         }
 
@@ -89,7 +94,9 @@ class Register {
                 },600)
             
             return {token,
+                insert_data,
                     expires_in: "24 hours"}
+
             } 
              catch (err){
             throw err

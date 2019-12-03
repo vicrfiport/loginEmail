@@ -1,19 +1,25 @@
 const User = require("../models/Users_model")
 const bcrypt = require("bcryptjs")
+const Role = require("../models/role_models")
 
 class Login {
     constructor(req) {
         
             (this.email = req.body.email),
             (this.password = req.body.password)
+           
+            
     }
 
     async exec() {
         try {
             let data = await User.find({
                 email: this.email
-            }).exec()
-           console.log(data)
+            }).populate({
+                path: 'Role_id',
+                model: Role
+        }).exec()
+           
 
             if (data.length == 0) {
                 throw Error("User not found")

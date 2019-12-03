@@ -4,6 +4,8 @@ class CreateRole{
     constructor(req){
         (this.name = req.body.name),
         (this.permission = req.body.permission)
+       
+
 
     }
 
@@ -13,6 +15,7 @@ class CreateRole{
         let query = new Role({
             name: this.name,
             permission: this.permission
+            
         })
         await query.save()
 

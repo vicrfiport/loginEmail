@@ -20,7 +20,9 @@ async exec(){
             params.permission = permission
         }
 
-        let query1 = await Role.findOne(params)
+        let query1 = await Role.find(params)
+          
+        
         return query1
         
     } catch (err) {
